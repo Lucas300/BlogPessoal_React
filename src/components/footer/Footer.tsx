@@ -1,4 +1,5 @@
-import { FacebookLogo, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react'
+import { DiscordLogo, FacebookLogo, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react'
+import { GithubLogo, GitlabLogoSimple } from '@phosphor-icons/react/dist/ssr'
 
 function Footer() {
 
@@ -11,11 +12,11 @@ function Footer() {
                     <p className='text-xl font-bold'>
                             Blog Pessoal Generation | Copyright: {data}
                         </p>
-                    <p className='text-lg'>Acesse nossas redes sociais</p>
+                    <p className='text-lg'>Acesse as minhas redes sociais</p>
                     <div className='flex gap-2'>
-                        <LinkedinLogo size={48} weight='bold' />
-                        <InstagramLogo size={48} weight='bold' />
-                        <FacebookLogo size={48} weight='bold' />
+                        <a href="https://www.linkedin.com/in/lucas-daniel-souza-dias/" target="_blank" rel="noopener noreferrer"><LinkedinLogo size={48} weight='bold' /></a>
+                        <a href="https://github.com/Lucas300" target="_blank"><GithubLogo size={48} weight='bold' /></a>
+                        <a href="https://www.instagram.com/lucas.kardashiann/" target="_blank" rel="noopener noreferrer"><InstagramLogo size={48} weight='bold' /></a>
                     </div>
                 </div>
             </div>

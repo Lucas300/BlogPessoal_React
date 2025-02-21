@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import Postagem from '../../../models/Postagem'
+import { useContext } from 'react'
+import { AuthContext } from '../../../contexts/AuthContext'
 
 interface CardPostagensProps {
     postagem: Postagem
@@ -7,6 +9,7 @@ interface CardPostagensProps {
 
 function CardPostagem({ postagem }: CardPostagensProps) {
     
+    const{usuario} = useContext(AuthContext);
     
 
     return (
@@ -34,7 +37,11 @@ function CardPostagem({ postagem }: CardPostagensProps) {
                 </div>
             </div>
 
-            <div className="flex">
+            
+
+              {
+                postagem.usuario?.id === usuario.id?(
+<div className="flex">
                     <Link to={`/editarpostagem/${postagem.id}`}
                         className='w-full text-slate-100 bg-indigo-400 hover:bg-indigo-800 
         flex items-center justify-center py-2'>
@@ -46,7 +53,10 @@ function CardPostagem({ postagem }: CardPostagensProps) {
                         <button>Deletar</button>
                     </Link>
                 </div>
-
+                ):(
+                    <h2 style={{ marginLeft: '10px', textAlign:'center'  }}>só <span style={{color: '#008000'}}>{postagem.usuario?.nome}</span> pode editar esse post</h2> 
+                )
+              }
             
         </div>
     )
