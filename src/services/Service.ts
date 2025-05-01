@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL
+    baseURL: 'https://blogpessoal-y25w.onrender.com'
 })
 // Onde fica as regras de negocio
 export const cadastrarUsuario = async (url: string, dados: Object, setDados: Function) => {
