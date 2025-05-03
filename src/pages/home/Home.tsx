@@ -4,7 +4,7 @@ import ModalPostagem from "../../components/postagens/modalpostagem/ModalPostage
 function Home() {
     return (
         <>
-            <div className="bg-indigo-900 flex justify-center">
+            <div className="bg-cover bg-center min-h-screen w-full flex items-center justify-center" style={{ backgroundImage: "url('https://img.freepik.com/fotos-gratis/fundo-de-papel-de-parede-colorido-embacado-artistico_58702-8303.jpg?semt=ais_hybrid&w=740')" }}>
                 <div className='container grid grid-cols-2 text-white'>
                     <div className="flex flex-col gap-4 items-center justify-center py-4">
                         <h2 className='text-5xl font-bold'>
