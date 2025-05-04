@@ -6,6 +6,7 @@ import Postagem from "../../../models/Postagem";
 import { buscar } from "../../../services/Service";
 import { DNA } from "react-loader-spinner";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
+import { BlogCard } from "../cardpostagens/CardTeste";
 
 function ListaPostagens() {
 
@@ -33,7 +34,7 @@ function ListaPostagens() {
 
     useEffect(() => {
         if (token === '') {
-            ToastAlerta('Você precisa estar logado',"warning")
+            ToastAlerta('Você precisa estar logado', "warning")
             navigate('/');
         }
     }, [token])
@@ -44,7 +45,7 @@ function ListaPostagens() {
 
     return (
         <>
-            {postagens.length === 0 && (
+            {/* {postagens.length === 0 && (
                 <DNA
                     visible={true}
                     height="200"
@@ -63,6 +64,38 @@ function ListaPostagens() {
                             <CardPostagens key={postagem.id} postagem={postagem} />
                         ))}
                     </div>
+                </div>
+            </div> */}
+            <div className="flex justify-center w-full my-4">
+                <div className="w-full max-w-4xl ">
+                    <BlogCard
+                        author="Lucas Daniel"
+                        date="30/04/2025 15:47"
+                        imageUrl="https://totalip.com.br/wp-content/uploads/2023/08/A-tecnologia-impulsiona-o-futuro-do-Brasil.png.webp"
+                        title="Por Que Você Ainda Não Foi Chamado para Entrevistas?"
+                        tag="Mentalidade de Crescimento"
+                        subtitle="Os Erros Invisíveis no Seu Perfil Que Estão Travando Sua Carreira Tech"
+                        paragraphs={[
+                            "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sdasda lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sdasda lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sdasda lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        ]}
+                        pointTitle="Seu currículo não mostra o que você realmente sabe fazer"
+                        pointText="Um erro comum entre profissionais tech é listar ferramentas sem contextualizar..."
+                    />
+                    <div className="my-4" />
+                    <BlogCard
+                        author="Lucas Daniel"
+                        date="30/04/2025 15:47"
+                        imageUrl="https://totalip.com.br/wp-content/uploads/2023/08/A-tecnologia-impulsiona-o-futuro-do-Brasil.png.webp"
+                        title="Por Que Você Ainda Não Foi Chamado para Entrevistas?"
+                        tag="Mentalidade de Crescimento"
+                        subtitle="Os Erros Invisíveis no Seu Perfil Que Estão Travando Sua Carreira Tech"
+                        paragraphs={[
+                            "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sdasda lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sdasda lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sdasda lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        ]}
+                        pointTitle="Seu currículo não mostra o que você realmente sabe fazer"
+                        pointText="Um erro comum entre profissionais tech é listar ferramentas sem contextualizar..."
+                    />
+
                 </div>
             </div>
         </>

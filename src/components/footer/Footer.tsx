@@ -21,7 +21,7 @@ function Footer() {
                     </p>
                     <p className='text-lg'>Minhas redes sociais</p>
                     <div className='flex gap-2'>
-                    <a href="https://www.linkedin.com/in/lucas-daniel-souza-dias/" target="_blank" rel="noopener noreferrer"><LinkedinLogo size={48} weight='bold' /></a>
+                        <a href="https://www.linkedin.com/in/lucas-daniel-souza-dias/" target="_blank" rel="noopener noreferrer"><LinkedinLogo size={48} weight='bold' /></a>
                         <a href="https://github.com/Lucas300" target="_blank"><GithubLogo size={48} weight='bold' /></a>
                         <a href="https://www.instagram.com/lucas.kardashiann/" target="_blank" rel="noopener noreferrer"><InstagramLogo size={48} weight='bold' /></a>
                     </div>
