@@ -2,3 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://wallpapers.com/images/hd/dark-blue-gradient-75nkeritcrbr2t8v.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+  }

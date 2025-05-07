@@ -1,4 +1,11 @@
+.popup-overlay {
+    background: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+}
+
 .popup-content {
+    background: transparent; /* Fundo do conteúdo transparente */
+    border: none; /* Remove bordas */
+    box-shadow: none; /* Remove sombras */
     border-radius: 1rem;
     padding-bottom: 2rem;
 }

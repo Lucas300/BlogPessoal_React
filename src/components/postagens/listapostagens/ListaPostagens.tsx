@@ -6,7 +6,8 @@ import Postagem from "../../../models/Postagem";
 import { buscar } from "../../../services/Service";
 import { DNA } from "react-loader-spinner";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
-import { BlogCard } from "../cardpostagens/CardTeste";
+import CardTeste from "../cardpostagens/CardTeste";
+
 
 function ListaPostagens() {
 
@@ -45,7 +46,7 @@ function ListaPostagens() {
 
     return (
         <>
-            {/* {postagens.length === 0 && (
+            {postagens.length === 0 && (
                 <DNA
                     visible={true}
                     height="200"
@@ -56,46 +57,13 @@ function ListaPostagens() {
                 />
             )}
             <div className="flex justify-center w-full my-4">
-                <div className="container flex flex-col mx-2">
-                    <div className='container mx-auto my-4 
-                        grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'
-                    >
-                        {postagens.map((postagem) => (
+                <div className="w-full max-w-4xl">
+                    {postagens
+                        .slice() // Cria uma cópia do array para evitar mutações
+                        .reverse() // Inverte a ordem das postagens
+                        .map((postagem) => (
                             <CardPostagens key={postagem.id} postagem={postagem} />
                         ))}
-                    </div>
-                </div>
-            </div> */}
-            <div className="flex justify-center w-full my-4">
-                <div className="w-full max-w-4xl ">
-                    <BlogCard
-                        author="Lucas Daniel"
-                        date="30/04/2025 15:47"
-                        imageUrl="https://totalip.com.br/wp-content/uploads/2023/08/A-tecnologia-impulsiona-o-futuro-do-Brasil.png.webp"
-                        title="Por Que Você Ainda Não Foi Chamado para Entrevistas?"
-                        tag="Mentalidade de Crescimento"
-                        subtitle="Os Erros Invisíveis no Seu Perfil Que Estão Travando Sua Carreira Tech"
-                        paragraphs={[
-                            "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sdasda lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sdasda lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sdasda lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                        ]}
-                        pointTitle="Seu currículo não mostra o que você realmente sabe fazer"
-                        pointText="Um erro comum entre profissionais tech é listar ferramentas sem contextualizar..."
-                    />
-                    <div className="my-4" />
-                    <BlogCard
-                        author="Lucas Daniel"
-                        date="30/04/2025 15:47"
-                        imageUrl="https://totalip.com.br/wp-content/uploads/2023/08/A-tecnologia-impulsiona-o-futuro-do-Brasil.png.webp"
-                        title="Por Que Você Ainda Não Foi Chamado para Entrevistas?"
-                        tag="Mentalidade de Crescimento"
-                        subtitle="Os Erros Invisíveis no Seu Perfil Que Estão Travando Sua Carreira Tech"
-                        paragraphs={[
-                            "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sdasda lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sdasda lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sdasda lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                        ]}
-                        pointTitle="Seu currículo não mostra o que você realmente sabe fazer"
-                        pointText="Um erro comum entre profissionais tech é listar ferramentas sem contextualizar..."
-                    />
-
                 </div>
             </div>
         </>

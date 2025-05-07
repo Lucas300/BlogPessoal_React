@@ -5,6 +5,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import Tema from "../../../models/Tema";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
+import ListaTemas from "../listatemas/ListaTemas";
 
 function FormTema() {
 
@@ -32,7 +33,7 @@ function FormTema() {
 
     useEffect(() => {
         if (token === '') {
-            ToastAlerta('Você precisa estar logado!', "warning")
+            ToastAlerta('Você precisa estar logado!', "info")
             navigate('/')
         }
     }, [token])
@@ -63,12 +64,12 @@ function FormTema() {
                 await atualizar(`/temas`, tema, setTema, {
                     headers: { 'Authorization': token }
                 })
-                ToastAlerta('O Tema foi atualizado com sucesso!', "success")
+                ToastAlerta('O Tema foi atualizado com sucesso!', "sucesso")
             } catch (error: any) {
                 if (error.toString().includes('403')) {
                     handleLogout();
                 } else {
-                    ToastAlerta('Erro ao atualizar o tema.', "error")
+                    ToastAlerta('Erro ao atualizar, tema esta sendo usado em algum post', "erro")
                 }
 
             }
@@ -77,12 +78,12 @@ function FormTema() {
                 await cadastrar(`/temas`, tema, setTema, {
                     headers: { 'Authorization': token }
                 })
-                ToastAlerta('O Tema foi cadastrado com sucesso!', "success")
+                ToastAlerta('O Tema foi cadastrado com sucesso!', "sucesso")
             } catch (error: any) {
                 if (error.toString().includes('403')) {
                     handleLogout();
                 } else {
-                    ToastAlerta('Erro ao cadastrar o tema.', "error")
+                    ToastAlerta('Erro ao cadastrar o tema.', "erro")
                 }
 
             }
@@ -99,20 +100,20 @@ function FormTema() {
             </h1>
 
             <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoTema}>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="descricao">Descrição do Tema</label>
+                <div className="flex flex-col gap-2 text-center text-white  font-bold">
+                    <label htmlFor="descricao" className="text-3xl">Descrição do Tema</label>
                     <input
                         type="text"
                         placeholder="Descreva aqui seu tema"
                         name='descricao'
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="border-2 border-slate-700 rounded p-2 text-black"
                         value={tema.descricao}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
                 </div>
                 <button
                     className="rounded text-slate-100 bg-indigo-400 
-                               hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center"
+                               hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center transition-transform transform hover:scale-105"
                     type="submit">
                     {isLoading ?
                         <RotatingLines
@@ -127,6 +128,7 @@ function FormTema() {
                     }
                 </button>
             </form>
+            <ListaTemas />
         </div>
     );
 }

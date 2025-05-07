@@ -34,7 +34,7 @@ function DeletarPostagem() {
 
     useEffect(() => {
         if (token === '') {
-            ToastAlerta('Você precisa estar logado',"warning")
+            ToastAlerta('Você precisa estar logado',"info")
             navigate('/')
         }
     }, [token])
@@ -55,13 +55,13 @@ function DeletarPostagem() {
                 }
             })
 
-            ToastAlerta('Postagem apagada com sucesso',"success")
+            ToastAlerta('Postagem apagada com sucesso',"sucesso")
 
         } catch (error: any) {
             if (error.toString().includes('403')) {
                 handleLogout()
             }else {
-                ToastAlerta('Erro ao deletar a postagem.',"error")
+                ToastAlerta('Erro ao deletar a postagem.',"erro")
             }
         }
 
@@ -77,28 +77,27 @@ function DeletarPostagem() {
         <div className='container w-1/3 mx-auto'>
             <h1 className='text-4xl text-center my-4'>Deletar Postagem</h1>
 
-            <p className='text-center font-semibold mb-4'>
+            <p className='text-center font-semibold mb-4 text-white text-4xl'>
                 Você tem certeza de que deseja apagar a postagem a seguir?
             </p>
 
             <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
                 <header 
-                    className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>
+                    className='py-2 px-6  text-center text-black font-bold  text-2xl'>
                     Postagem
                 </header>
                 <div className="p-4">
-                    <p className='text-xl h-full'>{postagem.titulo}</p>
-                    <p>{postagem.texto}</p>
+                    <p className='text-xl h-full text-white text-center'>{postagem.titulo}</p>
+                    <p className='text-xl h-full text-white text-center'>{postagem.texto}</p>
                 </div>
-                <div className="flex">
+                <div className="flex justify-center items-center mb-4">
                     <button 
-                        className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2'
+                        className="bg-red-500 mr-3 hover:bg-red-600 text-white font-semibold py-2 px-6 rounded-full shadow-md transition duration-300"
                         onClick={retornar}>
                         Não
                     </button>
                     <button 
-                        className='w-full text-slate-100 bg-indigo-400 
-                        hover:bg-indigo-600 flex items-center justify-center'
+                        className='bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-full shadow-md transition duration-300'
                         onClick={deletarPostagem}>
                         
                         {isLoading ?
