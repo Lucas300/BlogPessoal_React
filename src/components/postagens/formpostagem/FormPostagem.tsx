@@ -134,7 +134,14 @@ function FormPostagem() {
 
     return (
         <div className="container flex flex-col mx-auto items-center px-2 sm:px-4">
-            <form className="flex flex-col w-full max-w-4xl gap-6 p-6 bg-slate-600 rounded-lg shadow-lg" onSubmit={gerarNovaPostagem}>
+            <form
+                className="flex flex-col w-full max-w-4xl gap-6 p-6 bg-slate-600 rounded-lg shadow-lg"
+                style={{
+                    transform: "scale(0.8)", // Reduz o tamanho do formulário em 20%
+                    transformOrigin: "center", // Centraliza a escala
+                }}
+                onSubmit={gerarNovaPostagem}
+            >
                 <h1 className="text-4xl font-bold text-center my-4 text-white">
                     {id !== undefined ? "Editar Postagem" : "Nova Postagem"}
                 </h1>

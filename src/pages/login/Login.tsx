@@ -37,14 +37,27 @@ function Login() {
     }
 
     return (
-        <div className="bg-cover bg-center min-h-screen w-full flex items-center justify-center" style={{ backgroundImage: "url('https://wallpapers.com/images/featured/fundo-de-gradiente-azul-07xqmk2r9n9vmxli.jpg" }}>
+        <div
+            className="bg-cover bg-center min-h-screen w-full flex items-center justify-center"
+            style={{
+                backgroundImage:
+                    "url('https://wallpapers.com/images/featured/fundo-de-gradiente-azul-07xqmk2r9n9vmxli.jpg')",
+            }}
+        >
             <form
                 className="bg-[#1a1a1a] p-8 rounded-lg shadow-lg w-full max-w-md text-white text-center relative -mt-16"
+                style={{
+                    transform: "scale(0.75)", // Reduz o tamanho do formulário em 20%
+                    transformOrigin: "center", // Centraliza a escala
+                }}
                 onSubmit={login}
             >
                 <h2 className="text-2xl font-bold mb-6">Logar</h2>
                 <div className="mb-4 text-left">
-                    <label htmlFor="usuario" className="block text-sm font-medium text-gray-400 mb-2">
+                    <label
+                        htmlFor="usuario"
+                        className="block text-sm font-medium text-gray-400 mb-2"
+                    >
                         Usuário
                     </label>
                     <input
@@ -58,11 +71,14 @@ function Login() {
                     />
                 </div>
                 <div className="mb-4 text-left relative">
-                    <label htmlFor="senha" className="block text-sm font-medium text-gray-400 mb-2">
+                    <label
+                        htmlFor="senha"
+                        className="block text-sm font-medium text-gray-400 mb-2"
+                    >
                         Senha
                     </label>
                     <input
-                        type={showPassword ? "text" : "password"} // Alterna entre "text" e "password"
+                        type={showPassword ? "text" : "password"}
                         id="senha"
                         name="senha"
                         placeholder="Senha"
@@ -75,7 +91,7 @@ function Login() {
                         onClick={togglePasswordVisibility}
                         className="absolute right-3 top-10 text-gray-400 hover:text-gray-200"
                     >
-                        {showPassword ? "🙈" : "👁️"} {/* Ícone de olho */}
+                        {showPassword ? "🙈" : "👁️"}
                     </button>
                 </div>
                 <button
@@ -91,11 +107,11 @@ function Login() {
                             visible={true}
                         />
                     ) : (
-                        'Entrar'
+                        "Entrar"
                     )}
                 </button>
                 <p className="mt-4 text-sm text-gray-400">
-                    Ainda não tem uma conta?{' '}
+                    Ainda não tem uma conta?{" "}
                     <Link to="/cadastro" className="text-blue-500 hover:underline">
                         Cadastre-se
                     </Link>

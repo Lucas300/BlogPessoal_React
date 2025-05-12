@@ -64,10 +64,20 @@ function Cadastro() {
   }
 
   return (
-    <div className='' >
-      <div className="bg-cover bg-center min-h-screen w-full flex items-center justify-center" style={{ backgroundImage: "url('https://img.freepik.com/fotos-gratis/fundo-de-papel-de-parede-colorido-embacado-artistico_58702-8303.jpg?semt=ais_hybrid&w=740')" }}>
+    <div className="">
+      <div
+        className="bg-cover bg-center min-h-screen w-full flex items-center justify-center"
+        style={{
+          backgroundImage:
+            "url('https://img.freepik.com/fotos-gratis/fundo-de-papel-de-parede-colorido-embacado-artistico_58702-8303.jpg?semt=ais_hybrid&w=740')",
+        }}
+      >
         <form
           className="bg-[#1a1a1a] p-8 rounded-lg shadow-lg w-full max-w-md text-white"
+          style={{
+            transform: "scale(0.75)", // Reduz o tamanho do formulário em 20%
+            transformOrigin: "center", // Centraliza a escala
+          }}
           onSubmit={cadastrarNovoUsuario}
         >
           <h2 className="text-2xl font-bold mb-6 text-center">Crie sua conta</h2>
@@ -137,13 +147,11 @@ function Cadastro() {
             type="submit"
             className="w-full py-3 rounded text-white font-bold transition bg-[#007bff] hover:bg-[#0056b3]"
           >
-            {isLoading ? 'Carregando...' : 'Cadastrar'}
+            {isLoading ? "Carregando..." : "Cadastrar"}
           </button>
-          <div
-            className="w-full py-3 mt-4 rounded transition text-white font-bold text-center"
-          >
+          <div className="w-full py-3 mt-4 rounded transition text-white font-bold text-center">
             <p className="text-sm">
-              Já tem uma conta?{' '}
+              Já tem uma conta?{" "}
               <Link to="/login" className="text-blue-500 hover:underline">
                 Logar
               </Link>
