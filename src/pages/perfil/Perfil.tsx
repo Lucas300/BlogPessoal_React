@@ -2,6 +2,7 @@ import { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { AuthContext } from '../../contexts/AuthContext'
+import { ToastAlerta } from '../../utils/ToastAlerta'
 
 function Perfil() {
 
@@ -11,7 +12,7 @@ function Perfil() {
 
     useEffect(() => {
         if (usuario.token === "") {
-            alert('Você precisa estar logado')
+            ToastAlerta('Você precisa estar logado','info')
             navigate("/")
         }
     }, [usuario.token])
@@ -32,7 +33,7 @@ function Perfil() {
                     bg-slate-900 text-white text-2xl items-center justify-center"
             >
                 <p>Nome: {usuario.nome} </p>
-                <p>Email: {usuario.usuario}</p>
+                <p className='text-center'>Email: {usuario.usuario}</p>
             </div>
 
         </div>

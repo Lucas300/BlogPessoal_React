@@ -55,7 +55,7 @@ function DeletarTema() {
                 }
             })
 
-            ToastAlerta('Tema apagado com sucesso', "successo")
+            ToastAlerta('Tema apagado com sucesso', "sucesso")
 
         } catch (error: any) {
             if (error.toString().includes('403')) {
@@ -74,35 +74,36 @@ function DeletarTema() {
     }
 
     return (
-        <div className='container w-1/3 mx-auto'>
-            <h1 className='text-4xl text-center my-4'>Deletar tema</h1>
-            <p className='text-center font-semibold mb-4 mt-14 text-4xl text-white'>
-                Você tem certeza de que deseja apagar o tema a seguir?</p>
-            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between '>
-                <header
-                    className='py-2 px-6 text-center text-white font-bold text-2xl'>
-                    Tema
-                </header>
-                <p className='p-8 text-3xl text-center text-white h-full'>{tema.descricao}</p>
-                <div className="flex justify-center mb-10">
+        <div className="container w-full max-w-lg mx-auto px-4 sm:px-6 lg:px-8 mt-20 sm:mt-20">
+            <p className="text-center font-semibold mb-4 text-2xl sm:text-3xl lg:text-4xl text-white">
+                Você tem certeza de que deseja apagar o tema a seguir?
+            </p>
+            <div className="border flex flex-col rounded-2xl overflow-hidden justify-between bg-slate-700 shadow-lg">
+                <p className="p-6 sm:p-8 text-xl sm:text-2xl lg:text-3xl text-center text-white h-full">
+                    {tema.descricao}
+                </p>
+                <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mb-6 sm:mb-10 px-4">
                     <button
-                        className="bg-red-500 mr-3 hover:bg-red-600 text-white font-semibold py-2 px-6 rounded-full shadow-md transition duration-300"
-                        onClick={retornar}>
+                        className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-6 rounded-full shadow-md transition duration-300 w-full sm:w-auto"
+                        onClick={retornar}
+                    >
                         Não
                     </button>
                     <button
-                        className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-full shadow-md transition duration-300"
-                        onClick={deletarTema}>
-                        {isLoading ?
+                        className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-full shadow-md transition duration-300 w-full sm:w-auto"
+                        onClick={deletarTema}
+                    >
+                        {isLoading ? (
                             <RotatingLines
                                 strokeColor="white"
                                 strokeWidth="5"
                                 animationDuration="0.75"
                                 width="24"
                                 visible={true}
-                            /> :
+                            />
+                        ) : (
                             <span>Sim</span>
-                        }
+                        )}
                     </button>
                 </div>
             </div>

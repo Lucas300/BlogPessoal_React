@@ -100,7 +100,7 @@ function FormPostagem() {
                     },
                 });
 
-                ToastAlerta("Postagem atualizada com sucesso", "successo");
+                ToastAlerta("Postagem atualizada com sucesso", "sucesso");
             } catch (error: any) {
                 if (error.toString().includes("403")) {
                     handleLogout();
@@ -133,16 +133,21 @@ function FormPostagem() {
     const carregandoTema = tema.descricao === "";
 
     return (
-        <div className="container flex flex-col mx-auto items-center px-2 sm:px-4">
+        <div className="container flex flex-col mx-auto items-center mt-20  px-2. sm:px-1.5  lg:mt-1 md:px-8 " style={{
+                    paddingRight:' 10 rem',
+                    paddingLeft: '10 rem',
+                }}>
             <form
-                className="flex flex-col w-full max-w-4xl gap-6 p-6 bg-slate-600 rounded-lg shadow-lg"
+                className="flex flex-col w-full max-w-4xl gap-6 p-6 px bg-slate-600 rounded-lg shadow-lg pt-10"
                 style={{
                     transform: "scale(0.8)", // Reduz o tamanho do formulário em 20%
                     transformOrigin: "center", // Centraliza a escala
+                    marginTop: "-3em",
+
                 }}
                 onSubmit={gerarNovaPostagem}
             >
-                <h1 className="text-4xl font-bold text-center my-4 text-white">
+                <h1 className="text-4xl font-bold text-center my-2 text-white ">
                     {id !== undefined ? "Editar Postagem" : "Nova Postagem"}
                 </h1>
 

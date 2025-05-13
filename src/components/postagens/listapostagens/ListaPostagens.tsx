@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom"; // Adicionado useLocation
 import CardPostagens from "../cardpostagens/CardPostagens";
 import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
@@ -8,13 +8,10 @@ import { DNA } from "react-loader-spinner";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
 import CardTeste from "../cardpostagens/CardTeste";
 
-
 function ListaPostagens() {
-
     const navigate = useNavigate();
-
+    const location = useLocation(); // Hook para obter a rota atual
     const [postagens, setPostagens] = useState<Postagem[]>([]);
-
     const { usuario, handleLogout } = useContext(AuthContext);
     const token = usuario.token;
 
@@ -24,25 +21,24 @@ function ListaPostagens() {
                 headers: {
                     Authorization: token,
                 },
-            })
-
+            });
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                handleLogout()
+                handleLogout();
             }
         }
     }
 
     useEffect(() => {
         if (token === '') {
-            ToastAlerta('Você precisa estar logado', "warning")
+            ToastAlerta('Você precisa estar logado', "warning");
             navigate('/');
         }
-    }, [token])
+    }, [token]);
 
     useEffect(() => {
-        buscarPostagens()
-    }, [postagens.length])
+        buscarPostagens();
+    }, [postagens.length]);
 
     return (
         <>
@@ -56,7 +52,11 @@ function ListaPostagens() {
                     wrapperClass="dna-wrapper mx-auto"
                 />
             )}
-            <div className="flex justify-center w-full my-4">
+            <div
+                className={`flex justify-center w-full my-4 ${
+                    location.pathname === "/home" ? "" : "mt-14"
+                }`}
+            >
                 <div className="w-full max-w-4xl">
                     {postagens
                         .slice() // Cria uma cópia do array para evitar mutações

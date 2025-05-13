@@ -23,7 +23,7 @@ function Navbar() {
         component = (
             <div className="w-full bg-black text-white fixed top-0 left-0 z-50">
                 <div className="container mx-auto flex justify-between items-center py-3 px-5">
-                    <Link to="/" className="text-xl font-bold md:ml-20 lg:ml-20">
+                    <Link to="/home" className="text-xl font-bold md:ml-20 lg:ml-20">
                         Blog Pessoal
                     </Link>
                     <button
@@ -37,16 +37,16 @@ function Navbar() {
                             menuOpen ? "flex" : "hidden"
                         } md:flex flex-col md:flex-row gap-3 items-center absolute md:static font-bold top-14 left-0 w-full md:w-auto bg-black md:bg-transparent z-50 md:z-auto p-3 md:p-0`}
                     >
-                        <Link to="/" className="hover:underline text-sm">
+                        <Link to="/" onClick={() => setMenuOpen(!menuOpen)} className="hover:underline text-sm">
                             Postagens
                         </Link>
-                        <Link to="/temas" className="hover:underline text-sm">
+                        <Link to="/temas" onClick={() => setMenuOpen(!menuOpen)} className="hover:underline text-sm">
                             Temas
                         </Link>
-                        <Link to="/cadastrartema" className="hover:underline text-sm">
+                        <Link to="/cadastrartema" onClick={() => setMenuOpen(!menuOpen)} className="hover:underline text-sm">
                             Cadastrar tema
                         </Link>
-                        <Link to="/perfil" className="hover:underline text-sm">
+                        <Link to="/perfil" onClick={() => setMenuOpen(!menuOpen)} className="hover:underline text-sm">
                             Perfil
                         </Link>
                         <Link

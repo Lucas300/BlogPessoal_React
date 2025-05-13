@@ -11,7 +11,7 @@ function CardTemas({ tema }: CardTemasProps) {
     const { usuario } = useContext(AuthContext);
 
     return (
-        <div className="border flex flex-row items-center rounded-2xl overflow-hidden justify-between bg-slate-800 shadow-lg hover:shadow-xl transition-transform transform hover:scale-105">
+        <div className="border mx-2 flex flex-row items-center rounded-2xl overflow-hidden justify-between bg-slate-800 shadow-lg hover:shadow-xl transition-transform transform hover:scale-105">
             {/* Conteúdo do card */}
             <div className="flex flex-col flex-grow p-6">
                 <header className="text-black font-bold text-3xl text-center mb-2">
