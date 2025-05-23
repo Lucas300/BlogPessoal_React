@@ -1,50 +1,80 @@
-# React + TypeScript + Vite
+# 📝 Blog Pessoal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bem-vindo ao repositório do **Blog Pessoal**! Esta aplicação fullstack permite que usuários publiquem postagens, visualizem conteúdos de outros usuários e gerenciem temas como `#Tecnologia`, `#Hardskills` e outros.
 
-Currently, two official plugins are available:
+> ⚠️ **Importante:** Este espaço foi criado para compartilhar ideias, conhecimentos e experiências de forma construtiva. Evite conteúdos ofensivos, polêmicos ou que desrespeitem outras pessoas. Mantenha o ambiente saudável e respeitoso para todos! 😊
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+- Acesse aqui o Blog Pessoal: [https://portifolio-react-three-pi.vercel.app/](https://portifolio-react-three-pi.vercel.app/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Repositório Backend: [https://github.com/Lucas300/blogpessoal_spring](https://github.com/Lucas300/blogpessoal_spring)
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## 🚀 Funcionalidades
+
+### 📝 Postagens
+- Criar novas postagens.
+- Listar e visualizar postagens de todos os usuários.
+- Editar e excluir suas próprias postagens.
+- Filtrar postagens por temas.
+
+### 🏷️ Temas
+- Adicionar novos temas.
+- Editar e deletar temas.
+- Visualizar postagens relacionadas a um tema específico.
+- Os temas funcionam como hashtags para organizar as postagens.
+
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+### Frontend
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+
+### Backend
+- **Java 17**
+- **Spring Boot**
+- **JPA / Hibernate**
+- **PostgreSQL**
+- **Docker**
+
+
+---
+
+## ⚙️ Como Rodar o Projeto
+
+### Pré-requisitos
+- Node.js (recomendado instalar a versão LTS: https://nodejs.org)
+- Yarn (instalar após o Node.js com: `npm install --global yarn`)
+
+```bash
+git clone https://github.com/Lucas300/BlogPessoal_React.git
+
+cd BlogPessoal_React
+
+# Instale as dependências com Yarn
+yarn install
+
+# Rode a aplicação
+yarn dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## 🔐 Autenticação
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Este projeto **inclui autenticação de usuários**, permitindo login, cadastro e gerenciamento de sessões.
+
+- O usuário **é obrigado a se cadastrar e fazer login** para acessar o sistema e realizar postagens.
+- Sem autenticação, o usuário não pode interagir com o conteúdo.
+
+---
+
+## 🤝 Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.

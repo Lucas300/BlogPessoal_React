@@ -14,7 +14,7 @@ function CardPostagens({ postagem }: CardPostagensProps) {
   const link = '	https://picsum.photos/600/300'
 
   return (
-    <div className="bg-gray-900 text-white max-w-3xl mx-auto mb-10 rounded-lg shadow-lg overflow-hidden border border-gray-700">
+    <div className="bg-gray-900 text-white max-w-3xl mx-2 lg:mx-auto mb-10 rounded-lg shadow-lg overflow-hidden border border-gray-700">
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-700">
         
@@ -111,7 +111,7 @@ function CardPostagens({ postagem }: CardPostagensProps) {
                         </Link>
                     </div>
                 ) : (
-                    <h2 style={{ marginLeft: '10px', textAlign: 'center' }}>só <span style={{ color: '#008000' }}>{postagem.usuario?.nome}</span> pode editar esse post</h2>
+                    <h2 style={{ marginLeft: '10px',paddingBottom:'10px' ,textAlign: 'center' }}>só <span style={{ color: '#008000' }}>{postagem.usuario?.nome}</span> pode editar esse post</h2>
                 )
             }
     </div>
