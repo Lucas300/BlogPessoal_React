@@ -110,6 +110,28 @@ function Login() {
                         "Entrar"
                     )}
                 </button>
+                <button
+                    type="button"
+                    className="w-full py-3 rounded bg-green-600 hover:bg-green-700 text-white font-bold transition flex items-center justify-center mt-4"
+                    onClick={() =>
+                        setUsuarioLogin({
+                            usuario: 'recrutador@meuprojeto.com',
+                            senha: '123456789'
+                        } as UsuarioLogin)
+                    }
+                >
+                    {isLoading ? (
+                        <RotatingLines
+                            strokeColor="white"
+                            strokeWidth="5"
+                            animationDuration="0.75"
+                            width="24"
+                            visible={true}
+                        />
+                    ) : (
+                        "Entrar como Visitante"
+                    )}
+                </button>
                 <p className="mt-4 text-sm text-gray-400">
                     Ainda não tem uma conta?{" "}
                     <Link to="/cadastro" className="text-blue-500 hover:underline">
