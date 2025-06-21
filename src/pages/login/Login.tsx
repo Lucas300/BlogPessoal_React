@@ -9,7 +9,11 @@ function Login() {
     const { usuario, handleLogin, isLoading } = useContext(AuthContext);
 
     const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
-        {} as UsuarioLogin
+        {
+            usuario:'recrutador@visitante.com',
+            senha:'123456789',
+
+        } as UsuarioLogin
     );
 
     const [showPassword, setShowPassword] = useState(false); // Estado para alternar a visibilidade da senha
