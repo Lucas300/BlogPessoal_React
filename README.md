@@ -5,7 +5,7 @@ Bem-vindo ao repositório do **Blog Pessoal**! Esta aplicação fullstack permit
 > ⚠️ **Importante:** Este espaço foi criado para compartilhar ideias, conhecimentos e experiências de forma construtiva. Evite conteúdos ofensivos, polêmicos ou que desrespeitem outras pessoas. Mantenha o ambiente saudável e respeitoso para todos! 😊
 
 
-- Acesse aqui o Blog Pessoal: [https://portifolio-react-three-pi.vercel.app/](https://portifolio-react-three-pi.vercel.app/)
+- Acesse aqui o Blog Pessoal: [https://blog-pessoal-lucas-pi.vercel.app/](https://blog-pessoal-lucas-pi.vercel.app/)
 
 - Repositório Backend: [https://github.com/Lucas300/blogpessoal_spring](https://github.com/Lucas300/blogpessoal_spring)
 
