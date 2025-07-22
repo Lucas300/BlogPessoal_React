@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: 'https://blogpessoal-spring.onrender.com',
+    baseURL: 'https://blogpessoal-spring-jw1i.onrender.com',
 })
 // Onde fica as regras de negocio
 export const cadastrarUsuario = async (url: string, dados: Object, setDados: Function) => {
