@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Usuario from '../../models/Usuario';
 import { cadastrarUsuario } from '../../services/Service';
 import { ToastAlerta } from '../../utils/ToastAlerta';
+import fundoCadastro from '../../assets/images/fundo_cadastro.jpg';
 
 function Cadastro() {
   const navigate = useNavigate();
@@ -68,8 +69,7 @@ function Cadastro() {
       <div
         className="bg-cover bg-center min-h-screen w-full flex items-center justify-center"
         style={{
-          backgroundImage:
-            "url('https://img.freepik.com/fotos-gratis/fundo-de-papel-de-parede-colorido-embacado-artistico_58702-8303.jpg?semt=ais_hybrid&w=740')",
+          backgroundImage: `url(${fundoCadastro})`,
         }}
       >
         <form

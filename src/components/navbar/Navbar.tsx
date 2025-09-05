@@ -82,6 +82,7 @@ function Navbar() {
                         {(location.pathname === "/login" || location.pathname === "/") && (
                             <Link to="/cadastro" className="hover:underline">
                                 <button className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-bold py-2 px-6 text-xs rounded-xl shadow-md h-9 hover:shadow-lg transform hover:scale-105 transition duration-300 ease-in-out md:mr-16 lg:mr-16">
+                                
                                     Ainda Não Tem Conta?
                                 </button>
                             </Link>

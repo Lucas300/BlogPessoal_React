@@ -4,6 +4,7 @@ import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import UsuarioLogin from '../../models/UsuarioLogin';
 import { RotatingLines } from 'react-loader-spinner';
 import ProgressBarMensagem from './ProgressBarMensagem';
+import fundoLogin from '../../assets/images/fundo_login.jpg';
 
 function Login() {
     const navigate = useNavigate();
@@ -47,8 +48,7 @@ function Login() {
         <div
             className="bg-cover bg-center min-h-screen w-full flex items-center justify-center"
             style={{
-                backgroundImage:
-                    "url('https://wallpapers.com/images/featured/fundo-de-gradiente-azul-07xqmk2r9n9vmxli.jpg')",
+                backgroundImage: `url(${fundoLogin})`,
             }}
         >
             <div className="absolute  left-0 w-full h-full pt-6 mt-10 mb-10 ">
