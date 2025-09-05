@@ -48,7 +48,7 @@ function Login() {
             className="bg-cover bg-center min-h-screen w-full flex items-center justify-center"
             style={{
                 backgroundImage:
-                    "url('https://wallpapers.com/images/featured/fundo-de-gradiente-azul-07xqmk2r9n9vmxli.jpg')",
+                    "url('/src/assets/imagens/fundo_login.jpg')",
             }}
         >
             <div className="absolute  left-0 w-full h-full pt-6 mt-10 mb-10 ">

@@ -69,7 +69,7 @@ function Cadastro() {
         className="bg-cover bg-center min-h-screen w-full flex items-center justify-center"
         style={{
           backgroundImage:
-            "url('https://img.freepik.com/fotos-gratis/fundo-de-papel-de-parede-colorido-embacado-artistico_58702-8303.jpg?semt=ais_hybrid&w=740')",
+            "url('/src/assets/imagens/fundo_cadastro.jpg')",
         }}
       >
         <form
